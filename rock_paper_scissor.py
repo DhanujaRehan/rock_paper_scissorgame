@@ -3,9 +3,9 @@ import random
 
 emojies = {'r':"✊", 'p':"✋", 's':"✌️"}
 choices = ('r', 'p', 's')
+while True:
 
-user_choice = input('Rock, Paper , Scissor? (r,p,s) :' ).lower()
-while user_choice != 'end':
+    user_choice = input('Rock, Paper , Scissor? (r,p,s) :' ).lower()
     if user_choice not in choices:
         print('Invalid choice. Please choose r, p, or s.')
         
@@ -19,5 +19,10 @@ while user_choice != 'end':
          (user_choice == 'p' and computer_choice == 'r') or \
          (user_choice == 's' and computer_choice == 'p'):
         print("You win! 🎉")
+        
     else:
         print("You lose! 😢")
+        
+    should_continue = input('Continue? Press y or n: ').lower()
+    if should_continue == 'n':
+        break
